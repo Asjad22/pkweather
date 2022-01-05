@@ -1,0 +1,40 @@
+<div class="abc">
+		<h1>
+			<b>Lahore Weather Report</b>
+		</h1>
+		
+		
+
+		
+
+	</div>
+	<button class="btn btn-outline-secondary" routerLink="/">Home</button>
+
+	<br><br>
+	<br><br>
+	  
+	<div>
+		<table class="table table-hover">
+	  		<thead >
+	    		<tr>
+	      			<th scope="col">YY-MM-DD HH:MM:SS</th>
+	      			<th scope="col">Temp</th>
+	      			<th scope="col">Humidity</th>
+	      			<th scope="col">Clouds Description</th>
+	      			<th scope="col">Wind Speed</th>
+	    		</tr>
+	  		</thead>
+	  		<tbody>
+	    		<tr *ngFor= "let row of result.list">
+	      			<th scope="row">{{ row["dt_txt"] }}</th>
+	      			<td>{{ row['main']['temp'] - 273.15 }}</td>
+	      			<td>{{ row['main']['humidity'] }}</td>
+	      			<td>{{ row['weather'][0]['description'] }}</td>
+	      			<td>{{ row['wind']['speed'] }}</td>
+	    		</tr>
+	    			
+	  		</tbody>
+		</table>
+
+
+	</div>
